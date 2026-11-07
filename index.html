@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#f7f3ec" />
-  <meta name="description" content="Create your own custom book cover and matching book bag. Choose your fabrics and add a personalised name." />
+  <meta name="description" content="Create your own custom quraan cover and matching quraan bag. Choose your fabrics and add a personalised name." />
   <title>AD-DUHAA | Custom Covers & Bags</title>
   <style>
     :root {
@@ -169,7 +169,7 @@
   <div class="announcement">Made with care · personalised just for you</div>
   <header>
     <nav class="nav">
-      <a class="brand" href="#top" aria-label="The Book Atelier home">
+      <a class="brand" href="#top" aria-label="AD-UHAA home">
         <span class="brand-mark">AD</span>
         <span><span class="brand-name" id="brandName">AD-DUHAA</span><span class="brand-sub">Covers · Bags · Personalised</span></span>
       </a>
@@ -186,8 +186,8 @@
       <div class="hero-inner">
         <div>
           <div class="eyebrow">A little personal touch</div>
-          <h1>Made for your books.<br /><em>Designed by you.</em></h1>
-          <p class="hero-copy">Create a book cover and matching book bag that feel like yours. Choose your favourite fabrics, combine two prints, and add a name for a beautiful personalised finish.</p>
+          <h1>Made for your quraan.<br /><em>Designed by you.</em></h1>
+          <p class="hero-copy">Create a quraan cover and matching quraan bag that feel like yours. Choose your favourite fabrics, combine two prints, and add a name for a beautiful personalised finish.</p>
           <div class="hero-actions">
             <a class="button-primary" href="#design">Design your set&nbsp; ↗</a>
             <a class="text-link" href="#how">Discover how it works</a>
@@ -219,7 +219,7 @@
             <div class="panel-top">
               <div class="panel-title">
                 <div class="product-icon">▤</div>
-                <div><h3>Custom book cover</h3><p>A cover made to suit your style</p></div>
+                <div><h3>Custom quraan cover</h3><p>A cover made to suit your style</p></div>
               </div>
               <label class="switch"><input type="checkbox" id="coverEnabled" checked /> Add to order</label>
             </div>
@@ -247,7 +247,7 @@
             <div class="panel-top">
               <div class="panel-title">
                 <div class="product-icon">▱</div>
-                <div><h3>Custom book bag</h3><p>A handy bag in your chosen fabrics</p></div>
+                <div><h3>Custom quraan bag</h3><p>A handy bag in your chosen fabrics</p></div>
               </div>
               <label class="switch"><input type="checkbox" id="bagEnabled" /> Add to order</label>
             </div>
@@ -297,7 +297,7 @@
           <p>Your choices are sent straight to WhatsApp, so you can confirm the details before your order is made.</p>
         </div>
         <div class="steps">
-          <div class="step"><div class="step-no">01</div><h3>Choose your pieces</h3><p>Select a book cover, a book bag, or both.</p></div>
+          <div class="step"><div class="step-no">01</div><h3>Choose your pieces</h3><p>Select a quraan cover, a quraan bag, or both.</p></div>
           <div class="step"><div class="step-no">02</div><h3>Make it yours</h3><p>Pick one or two fabrics and add a name if you like.</p></div>
           <div class="step"><div class="step-no">03</div><h3>Confirm on WhatsApp</h3><p>Send your selections to receive final pricing and payment details.</p></div>
         </div>
@@ -308,7 +308,7 @@
   <footer>
     <div class="footer-inner">
       <div><div class="footer-brand" id="footerBrand">AD-DUHAA</div><p>Thoughtfully made, personally chosen.</p></div>
-      <div class="footer-note">Custom book covers &amp; book bags<br />Made with care, just for you.</div>
+      <div class="footer-note">Custom quraan covers &amp; quraan bags<br />Made with care, just for you.</div>
     </div>
   </footer>
 
@@ -329,7 +329,7 @@
     };
 
     /* FABRIC PRICES — edit the numbers below for your own prices in rand.
-       Each fabric has a separate book-cover price and book-bag price.
+       Each fabric has a separate quraan-cover price and quraan-bag price.
        Example: if two selected fabrics cost R200 and R300, the product
        fabric price is (R200 / 2) + (R300 / 2) = R250. */
     const FABRICS = [
@@ -449,12 +449,12 @@
         const item = state[product];
         if (!item.enabled) return;
         const desc = productDescription(product);
-        const label = product === "cover" ? "Book cover" : "Book bag";
+        const label = product === "cover" ? "quraan cover" : "quraan bag";
         const price = productPrice(product);
         total += price;
         lines.push(`<div class="summary-item"><span>${label}<br /><small>${desc.fabrics}<br />Fabric price: ${desc.priceBreakdown}${desc.name !== "No name" ? ` · Name: ${escapeHtml(desc.name)}` : ""}</small></span><strong>${money(price)}</strong></div>`);
       });
-      document.getElementById("summaryItems").innerHTML = lines.length ? lines.join("") : `<div class="summary-item"><span>Select a book cover or book bag</span><strong>—</strong></div>`;
+      document.getElementById("summaryItems").innerHTML = lines.length ? lines.join("") : `<div class="summary-item"><span>Select a quraan cover or quraan bag</span><strong>—</strong></div>`;
       document.getElementById("totalPrice").textContent = money(total);
     }
 
@@ -493,13 +493,13 @@
     document.getElementById("whatsappOrder").addEventListener("click", () => {
       const chosen = ["cover", "bag"].filter(product => state[product].enabled);
       if (!chosen.length) {
-        alert("Please add a book cover, a book bag, or both to your order.");
+        alert("Please add a quraan cover, a quraan bag, or both to your order.");
         return;
       }
       for (const product of chosen) {
         const item = state[product];
         if (item.nameEnabled && !item.name.trim()) {
-          alert(`Please type the name you would like on your ${product === "cover" ? "book cover" : "book bag"}, or untick the custom name option.`);
+          alert(`Please type the name you would like on your ${product === "cover" ? "quraan cover" : "quraan bag"}, or untick the custom name option.`);
           document.getElementById(`${product}Name`).focus();
           return;
         }
