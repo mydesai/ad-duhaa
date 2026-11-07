@@ -508,10 +508,10 @@
       const notes = document.getElementById("orderNotes").value.trim();
       const total = chosen.reduce((sum, product) => sum + productPrice(product), 0);
       const message = [
-        `Hello ${STORE_CONFIG.brandName}! I would like to place an order:`,
+        ` I would like to place an order: `,
         "",
         ...chosen.map(product => {
-          const label = product === "cover" ? "CUSTOM BOOK COVER" : "CUSTOM BOOK BAG";
+          const label = product === "cover" ? " custom quran bag " : " custom quran bag ";
           const desc = productDescription(product);
           return `${label}\nFabric${state[product].mode === 2 ? "s" : ""}: ${desc.fabrics}\nFabric price calculation: ${desc.priceBreakdown}\nCustom name: ${desc.name}\nEstimated price: ${money(productPrice(product))}`;
         }),
@@ -520,7 +520,7 @@
         "",
         customer ? `Customer name: ${customer}` : "",
         notes ? `Extra details: ${notes}` : "",
-        "Please confirm availability, final price and payment/checkout details. Thank you!"
+        " I would like to confirm availability, final price and payment details."
       ].filter(Boolean).join("\n");
 
       const number = STORE_CONFIG.whatsappNumber.replace(/\D/g, "");
