@@ -590,7 +590,7 @@
         const label = product === "cover" ? "Quraan cover" : "Quraan bag";
         const desc = productDescription(product, item);
         const nameFee = desc.name !== "No name" ? `\nCustom name fee: ${money(STORE_CONFIG.prices.customName)}` : "";
-        return `${label} ${index + 1}\nFabrics: ${desc.fabrics}\nFabric price calculation: ${desc.priceBreakdown}\nCustom name: ${desc.name}${nameFee}\nEstimated price: ${money(productPrice(product, item))}`;
+        return `${label} ${index + 1}\nFabrics: ${desc.fabrics}\nCustom name: ${desc.name}${nameFee}\nprice: ${money(productPrice(product, item))}`;
       });
 
       const message = [
@@ -598,7 +598,7 @@
         "",
         ...orderLines,
         "",
-        `ESTIMATED TOTAL: ${money(total)}`,
+        ` TOTAL: ${money(total)}`,
         "",
         customer ? `Customer name: ${customer}` : "",
         notes ? `Extra details: ${notes}` : "",
