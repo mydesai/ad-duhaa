@@ -62,7 +62,7 @@
     .section-heading { text-align: center; max-width: 620px; margin: 0 auto 42px; }
     .section-heading h2 { font-family: var(--serif); font-size: clamp(32px,4vw,43px); font-weight: 400; letter-spacing: -.025em; margin: 12px 0; }
     .section-heading p { font-size: 13px; color: var(--muted); line-height: 1.8; }
-    .customizer-wrap { display: grid; grid-template-columns: minmax(0,1fr) 315px; gap: 28px; align-items: start; }
+    .customizer-wrap { display: grid; grid-template-columns: 1fr; gap: 28px; align-items: start; }
     .builder { display: grid; gap: 22px; }
     .product-panel { background: white; border: 1px solid var(--line); border-radius: 19px; padding: 26px; box-shadow: 0 8px 28px rgba(72,58,39,.035); }
     .panel-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 15px; margin-bottom: 20px; }
@@ -98,7 +98,7 @@
     .mini-preview { width: 77px; height: 43px; display: flex; overflow: hidden; border-radius: 7px; border: 1px solid var(--line); flex-shrink: 0; background: var(--cream); }
     .mini-preview img { width: 100%; height: 100%; object-fit: cover; }
     .mini-preview.dual img { width: 50%; }
-    .summary-card { position: sticky; top: 96px; background: var(--cream); border: 1px solid #e8dece; border-radius: 18px; padding: 24px; }
+    .summary-card { position: static; background: var(--cream); border: 1px solid #e8dece; border-radius: 18px; padding: 24px; }
     .summary-card h3 { font-family: var(--serif); font-weight: 400; font-size: 25px; margin: 0 0 4px; }
     .summary-small { color: var(--muted); font-size: 10px; margin-bottom: 22px; }
     .summary-items { display: grid; gap: 12px; }
@@ -130,7 +130,7 @@
     .hidden { display: none !important; }
     @media (max-width: 900px) {
       .hero-inner { gap: 25px; }
-      .customizer-wrap { grid-template-columns: minmax(0,1fr) 285px; gap: 17px; }
+      .customizer-wrap { grid-template-columns:1fr; gap: 17px; }
       .fabric-grid { grid-template-columns: repeat(3,minmax(0,1fr)); }
     }
     @media (max-width: 700px) {
@@ -147,7 +147,7 @@
       .benefit-icon { font-size: 19px; }
       .section { padding: 58px 17px; }
       .customizer-wrap { grid-template-columns: 1fr; }
-      .summary-card { position: static; order: -1; }
+      .summary-card { position: static; order: 0; }
       .product-panel { padding: 20px 16px; }
       .panel-top { gap: 8px; }
       .panel-title h3 { font-size: 21px; }
@@ -205,7 +205,23 @@
       <div class="benefit"><span class="benefit-icon">⌁</span><span>Mix and match two fabrics</span></div>
       <div class="benefit"><span class="benefit-icon">♡</span><span>Add a personalised name</span></div>
     </div>
-
+ 
+ <section class="how" id="how">
+      <div class="section">
+        <div class="section-heading">
+          <div class="eyebrow">Simple as one, two, three</div>
+          <h2>From fabric to your favourite</h2>
+          <p>Your choices are sent straight to WhatsApp, so you can confirm the details before your order is made.</p>
+        </div>
+        <div class="steps">
+          <div class="step"><div class="step-no">01</div><h3>Choose your pieces</h3><p>Select a quraan cover, a quraan bag, or both.</p></div>
+          <div class="step"><div class="step-no">02</div><h3>Make it yours</h3><p>Pick one or two fabrics and add a name if you like.</p></div>
+          <div class="step"><div class="step-no">03</div><h3>Confirm on WhatsApp</h3><p>Send your selections to receive final pricing and payment details.</p></div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
     <section class="section" id="design">
       <div class="section-heading">
         <div class="eyebrow">Your design, your way</div>
@@ -289,21 +305,6 @@
       </div>
     </section>
 
-    <section class="how" id="how">
-      <div class="section">
-        <div class="section-heading">
-          <div class="eyebrow">Simple as one, two, three</div>
-          <h2>From fabric to your favourite</h2>
-          <p>Your choices are sent straight to WhatsApp, so you can confirm the details before your order is made.</p>
-        </div>
-        <div class="steps">
-          <div class="step"><div class="step-no">01</div><h3>Choose your pieces</h3><p>Select a quraan cover, a quraan bag, or both.</p></div>
-          <div class="step"><div class="step-no">02</div><h3>Make it yours</h3><p>Pick one or two fabrics and add a name if you like.</p></div>
-          <div class="step"><div class="step-no">03</div><h3>Confirm on WhatsApp</h3><p>Send your selections to receive final pricing and payment details.</p></div>
-        </div>
-      </div>
-    </section>
-  </main>
 
   <footer>
     <div class="footer-inner">
@@ -511,7 +512,7 @@
         ` I would like to place an order: `,
         "",
         ...chosen.map(product => {
-          const label = product === "cover" ? " custom quran bag " : " custom quran bag ";
+          const label = product === "cover" ? " custom quran cover " : " custom quran bag ";
           const desc = productDescription(product);
           return `${label}\nFabric${state[product].mode === 2 ? "s" : ""}: ${desc.fabrics}\nFabric price calculation: ${desc.priceBreakdown}\nCustom name: ${desc.name}\nEstimated price: ${money(productPrice(product))}`;
         }),
