@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f7f3ec" />
+  <meta name="description" content="Customise AD-DUHAA Quraan covers and bags. Choose fabrics, add names and send your order through WhatsApp." />
+  <title>Customise Your Design | AD-DUHAA</title>
+  <style>
+    :root {
+      --ink: #37332e;
+      --muted: #82796e;
+      --cream: #f7f3ec;
+      --paper: #fffdf9;
+      --sand: #eee6d9;
+      --gold: #b39157;
+      --gold-dark: #8e7041;
+      --line: #e8dfd2;
+      --green: #667568;
+      --shadow: 0 18px 55px rgba(72, 58, 39, .09);
+      --serif: Georgia, 'Times New Roman', serif;
+      --sans: 'Avenir Next', Avenir, 'Segoe UI', sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; color: var(--ink); background: var(--paper); font-family: var(--sans); line-height: 1.55; }
+    button, input, textarea { font: inherit; }
+    button { cursor: pointer; }
+    .announcement { background: #4f5e50; color: #fffaf1; text-align: center; padding: 8px 16px; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; }
+    header { position: sticky; top: 0; z-index: 20; background: rgba(255,253,249,.94); backdrop-filter: blur(14px); border-bottom: 1px solid rgba(232,223,210,.8); }
+    .nav { max-width: 1180px; margin: auto; padding: 17px 26px; display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+    .brand { display: flex; align-items: center; gap: 11px; text-decoration: none; color: var(--ink); }
+    .brand-mark { width: 38px; height: 38px; border: 1px solid var(--gold); border-radius: 50%; display: grid; place-items: center; color: var(--gold-dark); font-family: var(--serif); font-size: 21px; }
+    .brand-name { font-family: var(--serif); font-size: 21px; letter-spacing: .02em; }
+    .brand-sub { display: block; color: var(--muted); font-size: 8px; letter-spacing: .22em; text-transform: uppercase; margin-top: -3px; }
+    .nav-links { display: flex; align-items: center; gap: 28px; }
+    .nav-links a { color: var(--muted); font-size: 12px; text-decoration: none; letter-spacing: .06em; }
+    .nav-links a:hover { color: var(--gold-dark); }
+    .nav-cta { border: 1px solid var(--gold); border-radius: 99px; padding: 10px 17px; color: var(--gold-dark) !important; }
+    .hero { background: var(--cream); overflow: hidden; position: relative; }
+    .hero:before { content: ''; position: absolute; width: 510px; height: 510px; right: -150px; top: -210px; border: 1px solid rgba(179,145,87,.18); border-radius: 50%; box-shadow: 0 0 0 38px rgba(179,145,87,.035), 0 0 0 80px rgba(179,145,87,.025); }
+    .hero-inner { max-width: 1180px; margin: auto; padding: 76px 26px 78px; display: grid; grid-template-columns: 1.04fr .96fr; align-items: center; gap: 60px; position: relative; }
+    .eyebrow { color: var(--gold-dark); letter-spacing: .2em; text-transform: uppercase; font-size: 10px; font-weight: 650; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(42px, 5.2vw, 67px); line-height: 1.04; letter-spacing: -.035em; margin: 18px 0 20px; max-width: 590px; }
+    h1 em { color: var(--gold-dark); font-weight: 400; }
+    .hero-copy { color: var(--muted); max-width: 470px; font-size: 15px; line-height: 1.85; }
+    .hero-actions { display: flex; align-items: center; gap: 20px; margin-top: 30px; flex-wrap: wrap; }
+    .button-primary { border: 0; border-radius: 99px; padding: 14px 23px; color: white; background: var(--gold-dark); letter-spacing: .04em; font-size: 12px; box-shadow: 0 8px 22px rgba(142,112,65,.18); transition: transform .2s, background .2s; }
+    .button-primary:hover { background: #755a32; transform: translateY(-2px); }
+    .text-link { color: var(--ink); font-size: 12px; text-decoration: none; border-bottom: 1px solid var(--gold); padding-bottom: 4px; }
+    .hero-art { min-height: 390px; position: relative; display: grid; place-items: center; }
+    .hero-art-card { width: min(100%, 430px); height: 355px; background: #e8dfd1; border-radius: 48% 48% 16px 16px; position: relative; overflow: hidden; box-shadow: var(--shadow); }
+    .hero-art-card img { width: 100%; height: 100%; object-fit: cover; opacity: .92; }
+    .hero-stamp { position: absolute; width: 112px; height: 112px; border-radius: 50%; background: var(--paper); border: 1px solid var(--gold); display: grid; place-items: center; text-align: center; right: -22px; bottom: 28px; color: var(--gold-dark); font-family: var(--serif); font-size: 15px; line-height: 1.25; transform: rotate(8deg); box-shadow: 0 8px 24px rgba(72,58,39,.1); }
+    .hero-stamp span { display: block; font-family: var(--sans); text-transform: uppercase; letter-spacing: .12em; font-size: 7px; margin-top: 3px; }
+    .benefits { max-width: 1180px; margin: auto; padding: 24px 26px; display: grid; grid-template-columns: repeat(3,1fr); border-bottom: 1px solid var(--line); }
+    .benefit { display: flex; align-items: center; justify-content: center; gap: 12px; color: var(--muted); font-size: 11px; letter-spacing: .04em; padding: 8px 12px; }
+    .benefit + .benefit { border-left: 1px solid var(--line); }
+    .benefit-icon { color: var(--gold-dark); font-family: var(--serif); font-size: 23px; }
+    .section { max-width: 1180px; margin: auto; padding: 78px 26px; }
+    .section-heading { text-align: center; max-width: 620px; margin: 0 auto 42px; }
+    .section-heading h2 { font-family: var(--serif); font-size: clamp(32px,4vw,43px); font-weight: 400; letter-spacing: -.025em; margin: 12px 0; }
+    .section-heading p { font-size: 13px; color: var(--muted); line-height: 1.8; }
+    .customizer-wrap { display: grid; grid-template-columns: 1fr; gap: 28px; align-items: start; }
+    .builder { display: grid; gap: 28px; }
+    .product-group { display: grid; gap: 15px; }
+    .product-group-heading { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+    .product-group-heading h3 { font-family: var(--serif); font-size: 25px; font-weight: 400; margin: 0; }
+    .product-group-heading p { color: var(--muted); font-size: 11px; margin: 3px 0 0; }
+    .item-list { display: grid; gap: 16px; }
+    .empty-state { border: 1px dashed #d8cbb8; background: #fffdf9; border-radius: 14px; padding: 20px; color: var(--muted); font-size: 12px; text-align: center; }
+    .add-item-button { border: 1px solid var(--gold); background: #faf5eb; color: var(--gold-dark); border-radius: 99px; padding: 10px 17px; font-size: 11px; font-weight: 650; white-space: nowrap; }
+    .add-item-button:hover { background: #f2e8d7; }
+    .item-tools { display: flex; align-items: center; gap: 12px; }
+    .item-number { color: var(--muted); font-size: 10px; letter-spacing: .08em; text-transform: uppercase; white-space: nowrap; }
+    .remove-item-button { border: 1px solid #e5d8c9; background: transparent; color: #8a6658; border-radius: 99px; padding: 7px 11px; font-size: 10px; }
+    .remove-item-button:hover { background: #fbf1eb; border-color: #caa99b; }
+    .two-fabric-note { color: var(--muted); font-size: 10px; margin: 9px 0 0; }
+    .product-panel { background: white; border: 1px solid var(--line); border-radius: 19px; padding: 26px; box-shadow: 0 8px 28px rgba(72,58,39,.035); }
+    .panel-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 15px; margin-bottom: 20px; }
+    .panel-title { display: flex; align-items: center; gap: 13px; }
+    .product-icon { width: 43px; height: 43px; border-radius: 13px; background: var(--cream); display: grid; place-items: center; color: var(--gold-dark); font-size: 20px; }
+    .panel-title h3 { font-family: var(--serif); font-size: 23px; font-weight: 400; margin: 0; }
+    .panel-title p { margin: 2px 0 0; font-size: 11px; color: var(--muted); }
+    .switch { display: flex; align-items: center; gap: 9px; color: var(--muted); font-size: 11px; white-space: nowrap; }
+    .switch input { accent-color: var(--gold-dark); width: 16px; height: 16px; }
+    .panel-body.is-disabled { opacity: .42; pointer-events: none; }
+    .field-label { display: block; color: var(--ink); font-size: 11px; font-weight: 650; letter-spacing: .08em; text-transform: uppercase; margin: 19px 0 10px; }
+    .choice-row { display: flex; gap: 9px; flex-wrap: wrap; }
+    .choice-pill { border: 1px solid var(--line); background: #fffdf9; color: var(--muted); border-radius: 99px; padding: 8px 15px; font-size: 11px; transition: all .15s; }
+    .choice-pill.active { border-color: var(--gold); color: var(--gold-dark); background: #faf5eb; box-shadow: inset 0 0 0 1px rgba(179,145,87,.15); }
+    .fabric-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 11px; }
+    .fabric-card { border: 1px solid var(--line); border-radius: 12px; overflow: hidden; background: #fff; padding: 0; text-align: left; position: relative; transition: border .15s, transform .15s, box-shadow .15s; }
+    .fabric-card:hover { transform: translateY(-2px); box-shadow: 0 7px 16px rgba(72,58,39,.08); }
+    .fabric-card.selected { border: 2px solid var(--gold-dark); box-shadow: 0 0 0 3px rgba(179,145,87,.13); }
+    .fabric-card img { display: block; width: 100%; aspect-ratio: 1.2 / 1; object-fit: cover; background: var(--sand); }
+    .fabric-card span { display: block; color: var(--ink); }
+    .fabric-card .fabric-name { font-size: 10px; padding: 8px 8px 2px; }
+    .fabric-card .fabric-price { font-size: 9px; font-weight: 650; color: var(--gold-dark); padding: 0 8px 9px; }
+    .fabric-card .check { position: absolute; top: 7px; right: 7px; width: 20px; height: 20px; border-radius: 50%; background: var(--gold-dark); color: white; display: none; align-items: center; justify-content: center; font-size: 12px; box-shadow: 0 2px 8px rgba(0,0,0,.15); }
+    .fabric-card.selected .check { display: flex; }
+    .second-fabric { margin-top: 3px; padding-top: 4px; }
+    .name-row { display: grid; grid-template-columns: 1fr 1.5fr; align-items: center; gap: 15px; margin-top: 20px; padding-top: 17px; border-top: 1px solid var(--line); }
+    .name-toggle { display: flex; align-items: center; gap: 9px; font-size: 12px; color: var(--ink); }
+    .name-toggle input { accent-color: var(--gold-dark); width: 16px; height: 16px; }
+    .text-input, .notes-input { border: 1px solid var(--line); border-radius: 9px; padding: 11px 12px; width: 100%; background: #fffdf9; color: var(--ink); outline: none; font-size: 12px; }
+    .text-input:focus, .notes-input:focus { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(179,145,87,.12); }
+    .text-input:disabled { background: #f5f1eb; color: #aaa; }
+    .preview-line { display: flex; align-items: center; gap: 12px; margin-top: 17px; color: var(--muted); font-size: 10px; }
+    .mini-preview { width: 77px; height: 43px; display: flex; overflow: hidden; border-radius: 7px; border: 1px solid var(--line); flex-shrink: 0; background: var(--cream); }
+    .mini-preview img { width: 100%; height: 100%; object-fit: cover; }
+    .mini-preview.dual img { width: 50%; }
+    .summary-card { position: static; background: var(--cream); border: 1px solid #e8dece; border-radius: 18px; padding: 24px; }
+    .summary-card h3 { font-family: var(--serif); font-weight: 400; font-size: 25px; margin: 0 0 4px; }
+    .summary-small { color: var(--muted); font-size: 10px; margin-bottom: 22px; }
+    .summary-items { display: grid; gap: 12px; }
+    .summary-item { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; font-size: 11px; }
+    .summary-item span:first-child { color: var(--muted); }
+    .summary-item strong { font-weight: 650; white-space: nowrap; }
+    .summary-divider { border: 0; border-top: 1px solid #dfd3c1; margin: 18px 0; }
+    .total-row { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
+    .total-row span { font-size: 11px; letter-spacing: .1em; text-transform: uppercase; }
+    .total-row strong { font-family: var(--serif); font-size: 29px; font-weight: 400; color: var(--gold-dark); }
+    .summary-note { font-size: 10px; color: var(--muted); line-height: 1.65; margin: 12px 0 18px; }
+    .summary-card .button-primary { width: 100%; }
+    .contact-fields { margin-top: 18px; display: grid; gap: 9px; }
+    .contact-fields label { color: var(--muted); font-size: 10px; }
+    .contact-fields .text-input, .contact-fields .notes-input { margin-top: 5px; }
+    .notes-input { min-height: 68px; resize: vertical; }
+    .helper { color: var(--muted); font-size: 10px; margin-top: 10px; }
+    .how { background: #fbf8f3; }
+    .steps { max-width: 1040px; margin: 0 auto; display: grid; grid-template-columns: repeat(3,1fr); gap: 30px; }
+    .step { text-align: center; padding: 10px 22px; }
+    .step-no { width: 43px; height: 43px; border: 1px solid var(--gold); border-radius: 50%; display: grid; place-items: center; margin: 0 auto 16px; font-family: var(--serif); color: var(--gold-dark); font-size: 18px; }
+    .step h3 { font-family: var(--serif); font-size: 20px; font-weight: 400; margin-bottom: 8px; }
+    .step p { color: var(--muted); font-size: 11px; line-height: 1.8; }
+    footer { background: #4f5e50; color: #f8f3ea; padding: 34px 26px; }
+    .footer-inner { max-width: 1180px; margin: auto; display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+    .footer-brand { font-family: var(--serif); font-size: 22px; }
+    footer p { color: rgba(248,243,234,.72); font-size: 10px; margin: 4px 0 0; }
+    .footer-note { font-size: 10px; color: rgba(248,243,234,.75); text-align: right; }
+    .hidden { display: none !important; }
+    @media (max-width: 900px) {
+      .hero-inner { gap: 25px; }
+      .customizer-wrap { grid-template-columns: 1fr; gap: 17px; }
+      .fabric-grid { grid-template-columns: repeat(3,minmax(0,1fr)); }
+    }
+    @media (max-width: 700px) {
+      .nav { padding: 13px 18px; }
+      .nav-links { gap: 13px; }
+      .nav-links a:not(.nav-cta) { display: none; }
+      .brand-name { font-size: 19px; }
+      .hero-inner { grid-template-columns: 1fr; padding: 57px 22px 43px; gap: 22px; }
+      .hero-art { min-height: 270px; }
+      .hero-art-card { height: 260px; width: 78%; }
+      .hero-stamp { width: 90px; height: 90px; right: 3%; bottom: 10px; font-size: 13px; }
+      .benefits { padding: 12px 15px; }
+      .benefit { gap: 7px; font-size: 9px; padding: 6px; text-align: center; flex-direction: column; }
+      .benefit-icon { font-size: 19px; }
+      .section { padding: 58px 17px; }
+      .customizer-wrap { grid-template-columns: 1fr; }
+      .summary-card { position: static; order: 0; }
+      .product-panel { padding: 20px 16px; }
+      .product-group-heading { align-items: flex-start; flex-direction: column; }
+      .add-item-button { width: 100%; }
+      .panel-top { gap: 8px; }
+      .panel-title h3 { font-size: 21px; }
+      .fabric-grid { grid-template-columns: repeat(4,minmax(0,1fr)); gap: 7px; }
+      .fabric-card span { font-size: 9px; padding: 6px; }
+      .name-row { grid-template-columns: 1fr; gap: 9px; }
+      .steps { grid-template-columns: 1fr; gap: 15px; }
+      .step { padding: 6px 22px; }
+      .footer-inner { flex-direction: column; align-items: flex-start; }
+      .footer-note { text-align: left; }
+    }
+    @media (max-width: 380px) {
+      .fabric-grid { grid-template-columns: repeat(3,minmax(0,1fr)); }
+      .switch { font-size: 10px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="announcement">Made with care · personalised just for you</div>
+  <header>
+    <nav class="nav">
+      <a class="brand" href="index.html" aria-label="AD-DUHAA home">
+        <span class="brand-mark">AD</span>
+        <span><span class="brand-name" id="brandName">AD-DUHAA</span><span class="brand-sub">Covers · Bags · Personalised</span></span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="#design">Customise</a>
+        <a href="#how">How it works</a>
+        <a class="nav-cta" href="#design">Start creating</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-inner">
+        <div>
+          <div class="eyebrow">A little personal touch</div>
+          <h1>Made for your quraan.<br /><em>Designed by you.</em></h1>
+          <p class="hero-copy">Create a quraan cover and matching quraan bag that feel like yours. Choose your favourite fabrics, combine two prints, and add a name for a beautiful personalised finish.</p>
+          <div class="hero-actions">
+            <a class="button-primary" href="#design">Design your set&nbsp; ↗</a>
+            <a class="text-link" href="#how">Discover how it works</a>
+          </div>
+        </div>
+        <div class="hero-art" aria-label="Decorative fabric texture display">
+          <div class="hero-art-card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJRHfs7pBnvKlExKTts9dfbRWaUgk97xPeT6wkbdJlNw&s=10" alt="Blush fabric texture sample" /></div>
+          <div class="hero-stamp">Made <span>for you</span></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="benefits">
+      <div class="benefit"><span class="benefit-icon">✧</span><span>Choose your own fabrics</span></div>
+      <div class="benefit"><span class="benefit-icon">⌁</span><span>Mix and match two fabrics</span></div>
+      <div class="benefit"><span class="benefit-icon">♡</span><span>Add a personalised name</span></div>
+    </div>
+ 
+ <section class="how" id="how">
+      <div class="section">
+        <div class="section-heading">
+          <div class="eyebrow">Simple as one, two, three</div>
+          <h2>From fabric to your favourite</h2>
+          <p>Your choices are sent straight to WhatsApp, so you can confirm the details before your order is made.</p>
+        </div>
+        <div class="steps">
+          <div class="step"><div class="step-no">01</div><h3>Choose your pieces</h3><p>Select a quraan cover, a quraan bag, or both.</p></div>
+          <div class="step"><div class="step-no">02</div><h3>Make it yours</h3><p>Pick one or two fabrics and add a name if you like.</p></div>
+          <div class="step"><div class="step-no">03</div><h3>Confirm on WhatsApp</h3><p>Send your selections to receive final pricing and payment details.</p></div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+    <section class="section" id="design">
+      <div class="section-heading">
+        <div class="eyebrow">Your design, your way</div>
+        <h2>Let's make something lovely</h2>
+        <p>Select the items you would like, then choose one fabric or a combination of two for each. Your estimate updates as you create.</p>
+      </div>
+
+      <div class="customizer-wrap">
+        <div class="builder">
+          <section class="product-group" aria-labelledby="coversHeading">
+            <div class="product-group-heading">
+              <div>
+                <h3 id="coversHeading">Quraan covers</h3>
+                <p>Add one cover or create several different designs.</p>
+              </div>
+              <button class="add-item-button" id="addCoverButton" type="button">+ Add a cover</button>
+            </div>
+            <div class="item-list" id="coverList"></div>
+          </section>
+
+          <section class="product-group" aria-labelledby="bagsHeading">
+            <div class="product-group-heading">
+              <div>
+                <h3 id="bagsHeading">Quraan bags</h3>
+                <p>Each bag can have its own fabrics and personalised name.</p>
+              </div>
+              <button class="add-item-button" id="addBagButton" type="button">+ Add a bag</button>
+            </div>
+            <div class="item-list" id="bagList"></div>
+          </section>
+        </div>
+
+        <aside class="summary-card">
+          <h3>Your order</h3>
+          <div class="summary-small">A little preview of all your custom pieces</div>
+          <div class="summary-items" id="summaryItems"><div class="summary-item"><span>Add a cover or bag to begin</span><strong>—</strong></div></div>
+          <hr class="summary-divider" />
+          <div class="total-row"><span>Estimated total</span><strong id="totalPrice">R0</strong></div>
+          <p class="summary-note">This is an estimate based on the sample prices. Final price, sizing and availability will be confirmed with you on WhatsApp before payment. Shipping is available from R60 nationwide.</p>
+          <div class="contact-fields">
+            <label>Your name (optional)<input class="text-input" id="customerName" type="text" maxlength="50" placeholder="Your name" /></label>
+            <label>Extra details (optional)<textarea class="notes-input" id="orderNotes" placeholder="Bag size, preferred colours, or any special requests..."></textarea></label>
+          </div>
+          <button class="button-primary" id="whatsappOrder" type="button">Send order on WhatsApp&nbsp; ↗</button>
+          <div class="helper">No payment is taken on this website. We will confirm your order and payment details in WhatsApp.</div>
+        </aside>
+      </div>
+    </section>
+
+
+  <footer>
+    <div class="footer-inner">
+      <div><div class="footer-brand" id="footerBrand">AD-DUHAA</div><p>Thoughtfully made, personally chosen.</p></div>
+      <div class="footer-note">Custom quraan covers &amp; quraan bags<br />Made with care, just for you.</div>
+    </div>
+  </footer>
+
+  <script>
+    /* ================================================================
+       QUICK SETUP — change these details before publishing your website.
+       WhatsApp number: international format, numbers only (South Africa: 27...)
+       Set each fabric's cover and bag prices in the FABRICS list below.
+       For two fabrics, the website adds half of each selected fabric's price.
+       ================================================================ */
+    const STORE_CONFIG = {
+      brandName: "AD-DUHAA",
+      whatsappNumber: "27845831652", // Example: 27813891556 (do not include + or spaces)
+      currency: "ZAR",
+      prices: {
+        customName: 35        // Extra charge to add a name to each product
+      }
+    };
+
+    /* FABRIC PRICES — edit the numbers below for your own prices in rand.
+       Each fabric has a separate quraan-cover price and quraan-bag price.
+       Example: if two selected fabrics cost R200 and R300, the product
+       fabric price is (R200 / 2) + (R300 / 2) = R250. */
+    const FABRICS = [
+      { id: "ivory", name: "Soft ivory", image: "https://imgs.search.brave.com/o8Gpoz2HG1nhCPPcmaPBJZI2nZKSX6gcBbLHRycin58/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTAx/MzA0MzM0OC9waG90/by9icm93bi1sZWF0/aGVyLWFzLWEtYmFj/a2dyb3VuZC5qcGc_/cz02MTJ4NjEyJnc9/MCZrPTIwJmM9S3BN/RnlNVEJ0S0RYcWhZ/TTNic1Y4YjhISUsx/UElNcVVCbDdHNHFm/eUtEQT0", prices: { cover: 250, bag: 320 } },
+      { id: "oatmeal", name: "Natural oatmeal", image: "https://imgs.search.brave.com/7sw7mvw805rFMMnbIWQpl-AQHFiz_n0WNSP0RC4WJpk/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTg2/ODYzMDY4L3Bob3Rv/L2dyZWVuLWxlYXRo/ZXIuanBnP3M9NjEy/eDYxMiZ3PTAmaz0y/MCZjPTZwOVNFcXgw/OEpLNlZuMExod3NX/V2E5UDBWU29JOV9Q/cEVUbmpkSmgtQWc9", prices: { cover: 250, bag: 320 } },
+      { id: "blush", name: "Dusty blush", image: "https://imgs.search.brave.com/QfksLGAdT0hDqd2qa-vvO91SdCFBI8mHiZondgOB4o8/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTM1/MjAwMTM3Ny9waG90/by9nZW51aW5lLWxl/YXRoZXItc2NyYXRj/aGVkLXRleHR1cmUu/anBnP3M9NjEyeDYx/MiZ3PTAmaz0yMCZj/PUx2cTFmSndTZ0FB/ellEdzg0TFdRYjdE/NDZ3V2hlQ19vYkk4/Z3hlMlo1Y3c9", prices: { cover: 250, bag: 320 } },
+      { id: "sage", name: "Sage green", image: "https://imgs.search.brave.com/uavpSx2fny3OJo04_U3TxTP1p30RXtnDuvUm97AxGu8/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWcu/bWFnbmlmaWMuY29t/L2ZyZWUtcGhvdG8v/bGVhdGhlci1vcmFu/Z2UtdGV4dHVyZV8x/Mzg4LTcxNy5qcGc_/Z2E9R0ExLjEuNzA5/NjczNTU5LjE3ODU5/NDI4NjAmc2VtdD1h/aXNfdGVzdF9iJnc9/NzQwJnE9ODA", prices: { cover: 250, bag: 320 } },
+      { id: "rose", name: "Rose clay", image: "fabric-images/fabric-rose.jpg", prices: { cover: 250, bag: 320 } },
+      { id: "cocoa", name: "Warm cocoa", image: "fabric-images/fabric-cocoa.jpg", prices: { cover: 250, bag: 320 } },
+      { id: "navy", name: "Midnight navy", image: "fabric-images/fabric-navy.jpg", prices: { cover: 250, bag: 320 } },
+      { id: "gold", name: "Golden weave", image: "fabric-images/fabric-gold.jpg", prices: { cover: 250, bag: 320 } }
+    ];
+
+    // Every cover and bag is stored as its own item, with independent fabric/name choices.
+    let nextItemId = 2;
+    const state = {
+      cover: [createItem(1)],
+      bag: []
+    };
+
+    function createItem(id) {
+      return {
+        id,
+        mode: 1,
+        fabric1: FABRICS[0].id,
+        fabric2: FABRICS[3] ? FABRICS[3].id : FABRICS[0].id,
+        nameEnabled: false,
+        name: ""
+      };
+    }
+
+    // A preset-style link from the homepage can open the customiser with
+    // its product type and fabric selection already filled in.
+    const incomingPreset = new URLSearchParams(window.location.search);
+    const requestedProduct = incomingPreset.get("product");
+    if (requestedProduct === "cover" || requestedProduct === "bag") {
+      const presetItem = createItem(1);
+      const validFabricIds = new Set(FABRICS.map(fabric => fabric.id));
+      const firstPresetFabric = incomingPreset.get("fabric1");
+      const secondPresetFabric = incomingPreset.get("fabric2");
+      if (validFabricIds.has(firstPresetFabric)) presetItem.fabric1 = firstPresetFabric;
+      if (validFabricIds.has(secondPresetFabric)) presetItem.fabric2 = secondPresetFabric;
+      presetItem.mode = incomingPreset.get("mode") === "2" ? 2 : 1;
+      state.cover = requestedProduct === "cover" ? [presetItem] : [];
+      state.bag = requestedProduct === "bag" ? [presetItem] : [];
+    }
+
+    const money = amount => new Intl.NumberFormat("en-ZA", {
+      style: "currency", currency: STORE_CONFIG.currency, maximumFractionDigits: 2
+    }).format(amount).replace("ZAR", "R").trim();
+
+    function escapeHtml(value) {
+      return String(value).replace(/[&<>"']/g, char => ({
+        "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
+      }[char]));
+    }
+
+    function fabricById(id) {
+      return FABRICS.find(fabric => fabric.id === id) || FABRICS[0];
+    }
+
+    function fabricPrice(product, fabricId) {
+      return Number(fabricById(fabricId).prices[product]) || 0;
+    }
+
+    function productFabricPrice(product, item) {
+      const firstPrice = fabricPrice(product, item.fabric1);
+      if (item.mode === 2) {
+        const secondPrice = fabricPrice(product, item.fabric2);
+        return (firstPrice / 2) + (secondPrice / 2);
+      }
+      return firstPrice;
+    }
+
+    function productPrice(product, item) {
+      let amount = productFabricPrice(product, item);
+      if (item.nameEnabled && item.name.trim()) amount += STORE_CONFIG.prices.customName;
+      return amount;
+    }
+
+    function productDescription(product, item) {
+      const firstFabric = fabricById(item.fabric1);
+      const secondFabric = fabricById(item.fabric2);
+      const fabrics = item.mode === 2
+        ? `${firstFabric.name} + ${secondFabric.name}`
+        : firstFabric.name;
+      const firstPrice = fabricPrice(product, item.fabric1);
+      const priceBreakdown = item.mode === 2
+        ? `${money(firstPrice)} ÷ 2 + ${money(fabricPrice(product, item.fabric2))} ÷ 2`
+        : money(firstPrice);
+      return {
+        fabrics,
+        priceBreakdown,
+        name: item.nameEnabled && item.name.trim() ? item.name.trim() : "No name"
+      };
+    }
+
+    function renderFabricGrid(product, item, slot) {
+      const selectedId = item[`fabric${slot}`];
+      return FABRICS.map(fabric => `
+        <button type="button"
+          class="fabric-card ${selectedId === fabric.id ? "selected" : ""}"
+          data-action="fabric" data-slot="${slot}" data-fabric="${escapeHtml(fabric.id)}"
+          aria-pressed="${selectedId === fabric.id}"
+          aria-label="Choose ${escapeHtml(fabric.name)}">
+          <span class="check">✓</span>
+          <img src="${escapeHtml(fabric.image)}" alt="${escapeHtml(fabric.name)} fabric swatch" loading="lazy" />
+          <span class="fabric-name">${escapeHtml(fabric.name)}</span>
+          <span class="fabric-price">${money(fabricPrice(product, fabric.id))}</span>
+        </button>
+      `).join("");
+    }
+
+    function renderItemCard(product, item, index) {
+      const isCover = product === "cover";
+      const title = isCover ? "Custom quraan cover" : "Custom quraan bag";
+      const subtitle = isCover ? "A cover made to suit your style" : "A handy bag in your chosen fabrics";
+      const first = fabricById(item.fabric1);
+      const second = fabricById(item.fabric2);
+      const previewImages = item.mode === 2
+        ? `<img src="${escapeHtml(first.image)}" alt="${escapeHtml(first.name)}" /><img src="${escapeHtml(second.image)}" alt="${escapeHtml(second.name)}" />`
+        : `<img src="${escapeHtml(first.image)}" alt="${escapeHtml(first.name)}" />`;
+      const previewText = item.mode === 2
+        ? `${first.name} paired with ${second.name}`
+        : `${first.name} selected`;
+
+      return `
+        <article class="product-panel" data-product="${product}" data-item-id="${item.id}">
+          <div class="panel-top">
+            <div class="panel-title">
+              <div class="product-icon">${isCover ? "▤" : "▱"}</div>
+              <div><h3>${title} ${index + 1}</h3><p>${subtitle}</p></div>
+            </div>
+            <div class="item-tools">
+              <span class="item-number">Item ${index + 1}</span>
+              <button class="remove-item-button" type="button" data-action="remove">Remove</button>
+            </div>
+          </div>
+          <div class="panel-body">
+            <span class="field-label">How many fabrics?</span>
+            <div class="choice-row">
+              <button class="choice-pill ${item.mode === 1 ? "active" : ""}" type="button" data-action="mode" data-value="1" aria-pressed="${item.mode === 1}">One fabric</button>
+              <button class="choice-pill ${item.mode === 2 ? "active" : ""}" type="button" data-action="mode" data-value="2" aria-pressed="${item.mode === 2}">Two fabrics</button>
+            </div>
+            ${item.mode === 2 ? '<p class="two-fabric-note">For two fabrics, half of each fabric price is added together.</p>' : ""}
+            <span class="field-label">Choose your fabric</span>
+            <div class="fabric-grid">${renderFabricGrid(product, item, 1)}</div>
+            ${item.mode === 2 ? `
+              <div class="second-fabric">
+                <span class="field-label">Choose your second fabric</span>
+                <div class="fabric-grid">${renderFabricGrid(product, item, 2)}</div>
+              </div>` : ""}
+            <div class="name-row">
+              <label class="name-toggle"><input type="checkbox" data-name-enabled ${item.nameEnabled ? "checked" : ""} /> Add a custom name</label>
+              <input class="text-input" data-name-input type="text" maxlength="24" placeholder="Type the name here" value="${escapeHtml(item.name)}" ${item.nameEnabled ? "" : "disabled"} />
+            </div>
+            <div class="preview-line"><div class="mini-preview ${item.mode === 2 ? "dual" : ""}">${previewImages}</div><span>${escapeHtml(previewText)}</span></div>
+          </div>
+        </article>
+      `;
+    }
+
+    function renderProductList(product) {
+      const container = document.getElementById(`${product}List`);
+      const items = state[product];
+      if (!items.length) {
+        container.innerHTML = `<div class="empty-state">No ${product === "cover" ? "covers" : "bags"} added yet. Use the button above to add one.</div>`;
+        return;
+      }
+      container.innerHTML = items.map((item, index) => renderItemCard(product, item, index)).join("");
+    }
+
+    function updateSummary() {
+      const lines = [];
+      let total = 0;
+
+      ["cover", "bag"].forEach(product => {
+        state[product].forEach((item, index) => {
+          const desc = productDescription(product, item);
+          const label = product === "cover" ? "Quraan cover" : "Quraan bag";
+          const price = productPrice(product, item);
+          total += price;
+          const nameText = desc.name !== "No name"
+            ? ` · Name: ${escapeHtml(desc.name)} (R${STORE_CONFIG.prices.customName} fee)`
+            : "";
+          lines.push(`
+            <div class="summary-item">
+              <span>${label} ${index + 1}<br /><small>${escapeHtml(desc.fabrics)}<br />Fabric price: ${escapeHtml(desc.priceBreakdown)}${nameText}</small></span>
+              <strong>${money(price)}</strong>
+            </div>
+          `);
+        });
+      });
+
+      document.getElementById("summaryItems").innerHTML = lines.length
+        ? lines.join("")
+        : '<div class="summary-item"><span>Add a cover or bag to begin</span><strong>—</strong></div>';
+      document.getElementById("totalPrice").textContent = money(total);
+    }
+
+    function renderAll() {
+      renderProductList("cover");
+      renderProductList("bag");
+      updateSummary();
+    }
+
+    function findItem(product, id) {
+      return state[product].find(item => item.id === Number(id));
+    }
+
+    function addItem(product) {
+      state[product].push(createItem(nextItemId++));
+      renderAll();
+      const list = document.getElementById(`${product}List`);
+      list.lastElementChild?.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    }
+
+    document.getElementById("addCoverButton").addEventListener("click", () => addItem("cover"));
+    document.getElementById("addBagButton").addEventListener("click", () => addItem("bag"));
+
+    ["cover", "bag"].forEach(product => {
+      const list = document.getElementById(`${product}List`);
+
+      list.addEventListener("click", event => {
+        const button = event.target.closest("button[data-action]");
+        if (!button) return;
+        const card = button.closest("[data-item-id]");
+        if (!card) return;
+        const item = findItem(product, card.dataset.itemId);
+        if (!item) return;
+
+        const action = button.dataset.action;
+        if (action === "remove") {
+          state[product] = state[product].filter(existing => existing.id !== item.id);
+        } else if (action === "mode") {
+          item.mode = Number(button.dataset.value) === 2 ? 2 : 1;
+        } else if (action === "fabric") {
+          const slot = Number(button.dataset.slot);
+          if (slot === 1 || slot === 2) item[`fabric${slot}`] = button.dataset.fabric;
+        }
+        renderAll();
+      });
+
+      list.addEventListener("change", event => {
+        if (!event.target.matches("[data-name-enabled]")) return;
+        const card = event.target.closest("[data-item-id]");
+        if (!card) return;
+        const item = findItem(product, card.dataset.itemId);
+        if (!item) return;
+        item.nameEnabled = event.target.checked;
+        if (!item.nameEnabled) item.name = "";
+        renderAll();
+      });
+
+      list.addEventListener("input", event => {
+        if (!event.target.matches("[data-name-input]")) return;
+        const card = event.target.closest("[data-item-id]");
+        if (!card) return;
+        const item = findItem(product, card.dataset.itemId);
+        if (!item) return;
+        item.name = event.target.value;
+        updateSummary();
+      });
+    });
+
+    document.getElementById("whatsappOrder").addEventListener("click", () => {
+      const allItems = [
+        ...state.cover.map((item, index) => ({ product: "cover", item, index })),
+        ...state.bag.map((item, index) => ({ product: "bag", item, index }))
+      ];
+
+      if (!allItems.length) {
+        alert("Please add at least one quraan cover or quraan bag to your order.");
+        return;
+      }
+
+      for (const entry of allItems) {
+        if (entry.item.nameEnabled && !entry.item.name.trim()) {
+          const productLabel = entry.product === "cover" ? "quraan cover" : "quraan bag";
+          alert(`Please type the name for ${productLabel} ${entry.index + 1}, or untick the custom name option.`);
+          const card = document.querySelector(`[data-product="${entry.product}"][data-item-id="${entry.item.id}"]`);
+          card?.querySelector("[data-name-input]")?.focus();
+          return;
+        }
+      }
+
+      const customer = document.getElementById("customerName").value.trim();
+      const notes = document.getElementById("orderNotes").value.trim();
+      const total = allItems.reduce((sum, entry) => sum + productPrice(entry.product, entry.item), 0);
+      const orderLines = allItems.map(entry => {
+        const { product, item, index } = entry;
+        const label = product === "cover" ? "Quraan cover" : "Quraan bag";
+        const desc = productDescription(product, item);
+        const nameFee = desc.name !== "No name" ? `\nCustom name fee: ${money(STORE_CONFIG.prices.customName)}` : "";
+        return `${label} ${index + 1}\nFabrics: ${desc.fabrics}\nCustom name: ${desc.name}${nameFee}\nEstimated price: ${money(productPrice(product, item))}`;
+      });
+
+      const message = [
+        "I would like to place an order:",
+        "",
+        ...orderLines,
+        "",
+        `ESTIMATED TOTAL: ${money(total)}`,
+        "",
+        customer ? `Customer name: ${customer}` : "",
+        notes ? `Extra details: ${notes}` : "",
+        "I would like to confirm availability, final price and payment details."
+      ].filter(Boolean).join("\n");
+
+      const number = STORE_CONFIG.whatsappNumber.replace(/\D/g, "");
+      if (!number || number.length < 10) {
+        alert("Please add your business WhatsApp number in STORE_CONFIG using international format (for South Africa, start with 27).");
+        return;
+      }
+      window.open(`https://wa.me/${number}?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
+    });
+
+    document.getElementById("brandName").textContent = STORE_CONFIG.brandName;
+    document.getElementById("footerBrand").textContent = STORE_CONFIG.brandName;
+    renderAll();
+  </script>
+</body>
+</html>
